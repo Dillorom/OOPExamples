@@ -45,8 +45,14 @@
   <ItemGroup>
     <Compile Include="Computer.cs" />
     <Compile Include="Desktop.cs" />
+    <Compile Include="Display.cs" />
+    <Compile Include="IPowerOn.cs" />
+    <Compile Include="ISleep.cs" />
+    <Compile Include="Laptop.cs" />
+    <Compile Include="PowerControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SleepControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

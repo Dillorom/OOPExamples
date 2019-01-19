@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace OOPExamples
 {
-    abstract class Computer
+    abstract class Computer : IPowerOn
     {
+        protected IPowerOn powerController;
+
         protected string _name;
+
         public virtual string name
         {
             get
@@ -20,33 +23,24 @@ namespace OOPExamples
                 _name = value;
             }
         }
-        public bool isOn { get; private set; }
+
+        public bool isOn
+        {
+            get
+            {
+                return powerController.isOn;
+            }
+        }
 
         public Computer(string name)
         {
             this.name = name;
+            powerController = new PowerController();
         }
 
-        protected void TurnOn()
+        public virtual void TogglePower()
         {
-            isOn = true;
-        }
-
-        protected void TurnOff()
-        {
-            isOn = false;
-        }
-
-        public void TogglePower()
-        {
-            if(isOn)
-            {
-                TurnOff();
-            }
-            else
-            {
-                TurnOn();
-            }
+            powerController.TogglePower();
         }
     }
 }
