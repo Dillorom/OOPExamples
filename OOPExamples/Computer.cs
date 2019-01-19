@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOPExamples
 {
-    class Computer
+    abstract class Computer
     {
         protected string _name;
-        public string name
+        public virtual string name
         {
             get
             {
